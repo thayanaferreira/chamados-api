@@ -5,23 +5,24 @@ Projeto desenvolvido como parte da segunda etapa do processo seletivo da empresa
 
 ## Sumário
 
-[1. Tecnologias utilizadas](#tecnologias)  
-[2. Jusificativa das tecnologias utilizadas](#justificativa-das-tecnologias-utilizadas)  
-[3. Estrutura de Pacotes](#estrutura-de-pacotes)  
-[4. Configuração e Execução](#configuração-e-execução)  
-  - [4.1 Pré-requisitos](#pré-requisitos)  
-  - [4.2 Clonar o Repositório](#1-clonar-o-repositório)  
-  - [4.3 Banco de Dados (PostgreSQL)](#2-banco-de-dados-postgresql)  
+1. Tecnologias utilizadas  
+2. Jusificativa das tecnologias utilizadas  
+3. Estrutura de Pacotes  
+4. Configuração e Execução  
+    - 4.1 Pré-requisitos  
+    - 4.2 Clonar o Repositório  
+    - 4.3 Banco de Dados (PostgreSQL)  
 
-[5. Build e Execução](#build-e-execução)  
-  - [5.1 Executar a aplicação](#executar-a-aplicacao)  
-  - [5.2 Executar Testes](#executar-testes)  
-  - [5.3 Endpoints e Exemplos de Uso](#endpoints-e-exemplos-de-uso)  
-  - [5.4 Documentação Swagger](#documentação-swagger)  
-  - [5.5 Health Check](#health-check)  
-  - [5.6 Evidências de testes manuais](#evidencias-de-testes-manuais)  
+5. Build e Execução  
+
+    - 5.1 Executar a aplicação  
+    - 5.2 Executar Testes  
+    - 5.3 Endpoints e Exemplos de Uso  
+    - 5.4 Documentação Swagger  
+    - 5.5 Health Check  
+    - 5.6 Evidências de testes manuais  
   
-[6. Notas Finais](#notas-finais)  
+6. Notas Finais  
 
 ## 1. Tecnologias utilizadas
 
