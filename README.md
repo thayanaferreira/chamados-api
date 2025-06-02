@@ -5,20 +5,23 @@ Projeto desenvolvido como parte da segunda etapa do processo seletivo da empresa
 
 ## Sumário
 
-- [Tecnologias](#-tecnologias-e-justificativas)  
-- [Jusificativa das tecnologias utilizadas](???)
-- [Estrutura de Pacotes](#-estrutura-de-pacotes)  
-- [Configuração e Execução](#-configuração-e-execução)  
-  - [Pré-requisitos](#pré-requisitos)  
-  - [1. Clonar o Repositório](#1-clonar-o-repositório)  
-  - [2. Banco de Dados (PostgreSQL)](#2-banco-de-dados-postgresql)  
-  - [3. Configurar Credenciais](#3-configurar-credenciais)  
-  - [4. Build e Execução](#4-build-e-execução)  
-- [Endpoints e Exemplos de Uso](#-endpoints-e-exemplos-de-uso)  
-- [Princípios SOLID](#-princípios-solid)  
-- [Notas Finais](#-notas-finais)  
+[1. Tecnologias utilizadas](#tecnologias)  
+[2. Jusificativa das tecnologias utilizadas](#justificativa-das-tecnologias-utilizadas)  
+[3. Estrutura de Pacotes](#estrutura-de-pacotes)  
+[4. Configuração e Execução](#configuração-e-execução)  
+  - [4.1 Pré-requisitos](#pré-requisitos)  
+  - [4.2 Clonar o Repositório](#1-clonar-o-repositório)  
+  - [4.3 Banco de Dados (PostgreSQL)](#2-banco-de-dados-postgresql)  
 
-
+[5. Build e Execução](#build-e-execução)  
+  - [5.1 Executar a aplicação](#executar-a-aplicacao)  
+  - [5.2 Executar Testes](#executar-testes)  
+  - [5.3 Endpoints e Exemplos de Uso](#endpoints-e-exemplos-de-uso)  
+  - [5.4 Documentação Swagger](#documentação-swagger)  
+  - [5.5 Health Check](#health-check)  
+  - [5.6 Evidências de testes manuais](#evidencias-de-testes-manuais)  
+  
+[6. Notas Finais](#notas-finais)  
 
 ## 1. Tecnologias utilizadas
 
@@ -235,18 +238,18 @@ Observação: Embora o README tradicionalmente não seja o local apropriado para
 ![ ](image-1.png)
 
 #### POST:
-![alt text](image-2.png)
+![alt text](docs/images/image-2.png)
 
 #### GET:
-![alt text](image-3.png)
+![alt text](docs/images/image-3.png)
 
 #### PUT:
-![alt text](image-4.png)
+![alt text](docs/images/image-4.png)
 
 #### Health Check da aplicação:
-![alt text](image-5.png)
+![alt text](docs/images/image-5.png)
 
-![alt text](image-7.png)
+![alt text](docs/images/image-7.png)
 
 #### Um exemplo do tratamento que foi aplicado nos logs:
 
@@ -271,9 +274,12 @@ Hibernate:
 2025-06-02 15:41:36 [http-nio-8080-exec-10] INFO  b.c.n.c.config.RequestLoggingFilter - ⬅️  [PUT] /api/tickets/30 - Status: 404  
 
 ```
+## 6. Notas Finais
+
+- Em produção, use variáveis de ambiente para credenciais.
+- Defina `ddl-auto=validate` para evitar alterações acidentais no banco.
 
 ---
-
 
 ### Autor(a):
 👩‍💻 Construído por: **Thayana Ferreira**  
