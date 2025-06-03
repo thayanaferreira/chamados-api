@@ -1,7 +1,7 @@
 
 # Chamados API
 
-Projeto desenvolvido como parte da segunda etapa do processo seletivo da empresa XXX. Esta API tem como objetivo gerenciar chamados de serviço em ambiente corporativo, permitindo o cadastro, atualização e listagem de ocorrências.
+Esta API tem como objetivo gerenciar chamados de serviço em ambiente corporativo, permitindo o cadastro, atualização e listagem de ocorrências.
 
 ## Sumário
 
