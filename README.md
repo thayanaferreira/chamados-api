@@ -19,7 +19,7 @@ Esta API tem como objetivo gerenciar chamados de serviço em ambiente corporativ
     - 6.4 Documentação Swagger  
     - 6.5 Health Check  
     - 6.6 Evidências de testes manuais  
-7. Notas Finais  #
+7. Notas Finais  
 
 ## 1. Tecnologias utilizadas
 
@@ -215,7 +215,6 @@ curl -X PUT http://localhost:8080/api/tickets/1   -H "Content-Type: application/
 ```
 
 Erro de Validação (400):
-
 Deixar qualquer um dos 4 campos sem prencher nada, mandando "vazio".  
 Ou, preencher os campos categoria e sentimento, mas diferente dos valores esperados (foram mapeados como enum).
 
@@ -280,6 +279,7 @@ Hibernate:
 2025-06-02 15:41:36 [http-nio-8080-exec-10] INFO  b.c.n.c.config.RequestLoggingFilter - ⬅️  [PUT] /api/tickets/30 - Status: 404  
 
 ```
+
 ## 7. Notas Finais
 
 - Em produção, use variáveis de ambiente para credenciais.
