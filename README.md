@@ -1,4 +1,3 @@
-
 # Chamados API
 
 Esta API tem como objetivo gerenciar chamados de serviço em ambiente corporativo, permitindo o cadastro, atualização e listagem de ocorrências.
@@ -8,39 +7,37 @@ Esta API tem como objetivo gerenciar chamados de serviço em ambiente corporativ
 1. Tecnologias utilizadas  
 2. Jusificativa das tecnologias utilizadas  
 3. Estrutura de Pacotes  
-4. Configuração e Execução  
-    - 4.1 Pré-requisitos  
-    - 4.2 Clonar o Repositório  
-    - 4.3 Banco de Dados (PostgreSQL)  
-
-5. Build e Execução  
-
-    - 5.1 Executar a aplicação  
-    - 5.2 Executar Testes  
-    - 5.3 Endpoints e Exemplos de Uso  
-    - 5.4 Documentação Swagger  
-    - 5.5 Health Check  
-    - 5.6 Evidências de testes manuais  
-  
-6. Notas Finais  
+4. Arquitetura e boas práticas  
+5. Configuração e Execução  
+    - 5.1 Pré-requisitos  
+    - 5.2 Clonar o Repositório  
+    - 5.3 Banco de Dados (PostgreSQL)  
+6. Build e Execução  
+    - 6.1 Executar a aplicação  
+    - 6.2 Executar Testes  
+    - 6.3 Endpoints e Exemplos de Uso  
+    - 6.4 Documentação Swagger  
+    - 6.5 Health Check  
+    - 6.6 Evidências de testes manuais  
+7. Notas Finais  #
 
 ## 1. Tecnologias utilizadas
 
-- **Java 21**  
-- **Spring Boot 3.2.5**  
-- **Maven**  
-- **PostgreSQL**  
-- **Lombok**  
-- **Spring Data JPA**  
-- **Spring Validation**  
-- **Spring Boot Actuator**  
-- **Swagger/OpenAPI**  
-- **Docker & Docker Compose**  
-- **JUnit + Mockito**  
+- Java 21  
+- Spring Boot 3.2.5  
+- Maven  
+- PostgreSQL  
+- Lombok  
+- Spring Data JPA  
+- Spring Validation  
+- Spring Boot Actuator  
+- Swagger/OpenAPI  
+- Docker & Docker Compose  
+- JUnit + Mockito  
 
 ## 2. Jusificativa das tecnologias utilizadas
 
-A escolha das tecnologias foi orientada pelos temas abordados na primeira fase do processo seletivo, que avaliava a familiaridade e o tempo de experiência dos candidatos com determinadas ferramentas. Também foram consideradas as tecnologias mencionadas na descrição do desafio, partindo do pressuposto de que são amplamente utilizadas no dia a dia da empresa.
+A escolha das tecnologias foi orientada pelos temas abordados na primeira fase do processo seletivo, que avaliava a familiaridade e o tempo de experiência dos candidatos com determinadas ferramentas. Também foram consideradas as tecnologias mencionadas na descrição do desafio, partindo do pressuposto de que são utilizadas no dia a dia da empresa.
 
 Para as tecnologias que não foram explicitamente citadas, a seleção priorizou ferramentas consolidadas no mercado, que complementam a stack proposta com foco em qualidade, manutenibilidade e boas práticas de desenvolvimento.
 
@@ -83,10 +80,19 @@ chamados-api
 
 ```
 
+## 4. Arquitetura e Boas Práticas Aplicadas
 
-## 4. Configuração e Execução
+- Arquitetura MVC (Model-View-Controller)  
+- Princípios SOLID  
+- Testes automatizados  
+- Organização de pacotes clara e modularizada  
+- Padrão de commits: Conventional Commits  
+- Tratamento global de exceções  
+- Documentação da API (Swagger/OpenAPI)  
 
-### 4.1 Pré-requisitos
+## 5. Configuração e Execução
+
+### 5.1 Pré-requisitos
 
 - Java 21+
 - Git
@@ -94,14 +100,14 @@ chamados-api
 - PostgreSQL local ou container
 - IntelliJ IDEA ou VS Code
 
-### 4.2 Clonar o Repositório
+### 5.2 Clonar o Repositório
 
 ```bash
 git clone https://github.com/thayanaferreira/chamados-api.git
 cd chamados-api
 ```
 
-### 4.3 Banco de Dados (PostgreSQL via Docker)
+### 5.3 Banco de Dados (PostgreSQL via Docker)
 
 Crie `docker-compose.yml`:
 
@@ -147,9 +153,9 @@ spring.datasource.password=123456
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-## 5. Build e Execução
+## 6. Build e Execução
 
-### 5.1 Executar a aplicação:
+### 6.1 Executar a aplicação:
 ```bash
 # Windows
 mvnw.cmd clean install
@@ -160,7 +166,7 @@ mvnw.cmd spring-boot:run
 ./mvnw spring-boot:run
 ```
 
-### 5.2 Executar Testes
+### 6.2 Executar Testes
 
 ```bash
 # Windows
@@ -170,8 +176,7 @@ mvnw.cmd test
 ./mvnw test
 ```
 
-
-### 5.3 Endpoints e Exemplos de Uso
+### 6.3 Endpoints e Exemplos de Uso
 
 São 3 endpoits de negócio:
 | Método | Rota                  | Descrição                          |
@@ -181,13 +186,13 @@ São 3 endpoits de negócio:
 | PUT    | `/api/tickets/{id}`   | Atualiza um ticket existente       |
 
 
-#### Listar:
+Listar:
 
 ```bash
 curl -X GET http://localhost:8080/api/tickets
 ```
 
-#### Exemplo - Criar:
+Exemplo - Criar:
 
 ```bash
 curl -X POST http://localhost:8080/api/tickets   -H "Content-Type: application/json"   -d '{
@@ -198,7 +203,7 @@ curl -X POST http://localhost:8080/api/tickets   -H "Content-Type: application/j
   }'
 ```
 
-#### Exemplo - Atualizar:
+Exemplo - Atualizar:
 
 ```bash
 curl -X PUT http://localhost:8080/api/tickets/1   -H "Content-Type: application/json"   -d '{
@@ -209,7 +214,7 @@ curl -X PUT http://localhost:8080/api/tickets/1   -H "Content-Type: application/
   }'
 ```
 
-#### Erro de Validação (400):
+Erro de Validação (400):
 
 Deixar qualquer um dos 4 campos sem prencher nada, mandando "vazio".  
 Ou, preencher os campos categoria e sentimento, mas diferente dos valores esperados (foram mapeados como enum).
@@ -223,20 +228,20 @@ Ou, preencher os campos categoria e sentimento, mas diferente dos valores espera
 }
 ```
 
-### 5.4 Documentação Swagger
+### 6.4 Documentação Swagger
 
 [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
-### 5.5 Health Check
+### 6.5 Health Check
 
 [http://localhost:8080/actuator/health](http://localhost:8080/actuator/health)
 
-### 5.6 Evidências de testes manuais:
+### 6.6 Evidências de testes manuais:
 
 Observação: Embora o README tradicionalmente não seja o local apropriado para armazenar evidências de testes manuais, esta inclusão foi feita exclusivamente para fins avaliativos, com o objetivo de facilitar a verificação e compreensão do funcionamento da aplicação por parte da equipe responsável pela análise.
 
 #### Todos os 4 endpoists que foram implementados:  
-![ ](image-1.png)
+![ ](docs/images/image-1.png)
 
 #### POST:
 ![alt text](docs/images/image-2.png)
@@ -275,7 +280,7 @@ Hibernate:
 2025-06-02 15:41:36 [http-nio-8080-exec-10] INFO  b.c.n.c.config.RequestLoggingFilter - ⬅️  [PUT] /api/tickets/30 - Status: 404  
 
 ```
-## 6. Notas Finais
+## 7. Notas Finais
 
 - Em produção, use variáveis de ambiente para credenciais.
 - Defina `ddl-auto=validate` para evitar alterações acidentais no banco.
@@ -284,7 +289,7 @@ Hibernate:
 
 ### Autor(a):
 👩‍💻 Construído por: **Thayana Ferreira**  
-📎 [LinkedIn](https://www.linkedin.com/in/thayanaferreira)
+📎 [LinkedIn](https://www.linkedin.com/in/thayana-ferreira-da-silva-2655b861)
 
 ---
 
